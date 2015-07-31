@@ -1,3 +1,4 @@
+
 // This is the server-side file of our mobile remote controller app.
 // It initializes socket.io and a new express instance.
 // Start it by running 'node app.js' from your terminal.
@@ -35,7 +36,7 @@ var io = require('socket.io').listen(app.listen(port));
 // local host ip address w default port 8080 unless port changed by host server
 
 //var localhost = ip_addr[0]+ ":" + port;
-var localhost = hostname();
+var localhost = os.hostname();
 
 // App Configuration
 
