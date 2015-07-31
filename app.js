@@ -37,7 +37,7 @@ var io = require('socket.io').listen(app.listen(port));
 
 //var localhost = ip_addr[0]+ ":" + port;
 //var localhost = os.hostname();
-var localhost = "https://young-mesa-5396.herokuapp.com"
+var localhost = "young-mesa-5396.herokuapp.com"
 
 // App Configuration
 
