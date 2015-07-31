@@ -36,7 +36,8 @@ var io = require('socket.io').listen(app.listen(port));
 // local host ip address w default port 8080 unless port changed by host server
 
 //var localhost = ip_addr[0]+ ":" + port;
-var localhost = os.hostname();
+//var localhost = os.hostname();
+var localhost = "https://young-mesa-5396.herokuapp.com"
 
 // App Configuration
 
