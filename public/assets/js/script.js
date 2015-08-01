@@ -17,7 +17,7 @@ $(function() {
 	
 	var secretTextBox = form.find('input[type=text]');
 	secretTextBox.hide();
-	
+
 	var presentation = $('.reveal');
 
 	var key = "", animationTimeout;
@@ -27,10 +27,10 @@ $(function() {
 	$("#qrcode").append("<img id='qr' />");
 
 	// When the page is loaded it asks you for a key and sends it to the server
+	// callback
 
-	// the idea is for auto login when mobile connected. still working
+	form.submit(function(e){
 
-	var supersubmit = function(){form.submit(function(e){
 
 		e.preventDefault();
 
@@ -47,7 +47,7 @@ $(function() {
 			});
 		}
 
-	});}
+	})
 
 	//$.urlParam('key') to get mobile login password from url
 
@@ -77,11 +77,9 @@ $(function() {
 
 	socket.on('bypassform', function(data) {
 
-        
-        $('input[type=text]').val(data.bypass_pw);
-        $('form.login').submit();
-
-        console.log("submit: "+data.bypass_pw);
+			$('input[type=text]').val(data.bypass_pw);
+        	$('form.login').submit();
+ 
 
       });
 
@@ -95,8 +93,6 @@ $(function() {
         var qrstr = "http://chart.apis.google.com/chart?chs=300x300&cht=qr&chl=http://"+data.host+"?urlkey=" + data.leak + "&choe=UTF-8";
         $("#qr").attr('src',qrstr);
         $('input[type=text]').val(data.leak);
-        // if login from desktop it is a bugs right now
-        supersubmit();
 
       });
 
