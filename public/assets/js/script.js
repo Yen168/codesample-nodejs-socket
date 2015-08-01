@@ -71,6 +71,18 @@ $(function() {
 
 	}
 
+	// bypass all client if once mobile login successfully.
+
+	socket.on('bypassform', function(data) {
+
+        
+        $('input[type=text]').val(data.bypass_pw);
+        $('form.login').submit();
+
+        console.log("submit: "+data.bypass_pw);
+
+      });
+
 	// QRcode generator. get key form server. 
 	//future idea will be that client side generate key then sent to server 
 
