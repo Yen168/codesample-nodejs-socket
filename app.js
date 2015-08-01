@@ -8,16 +8,16 @@
 var os = require('os');
 
 
-var interfaces = os.networkInterfaces();
-var ip_addr = [];
-for (var i in interfaces) {
-    for (var j in interfaces[i]) {
-        var address = interfaces[i][j];
-        if (address.family === 'IPv4' && !address.internal) {
-            ip_addr.push(address.address);
-        }
-    }
-}
+// var interfaces = os.networkInterfaces();
+// var ip_addr = [];
+// for (var i in interfaces) {
+//     for (var j in interfaces[i]) {
+//         var address = interfaces[i][j];
+//         if (address.family === 'IPv4' && !address.internal) {
+//             ip_addr.push(address.address);
+//         }
+//     }
+// }
 
 // Creating an express server
 
@@ -35,9 +35,9 @@ var io = require('socket.io').listen(app.listen(port));
 
 // local host ip address w default port 8080 unless port changed by host server
 
-var localhost = ip_addr[0]+ ":" + port;
+//var localhost = ip_addr[0]+ ":" + port;
 //var localhost = os.hostname();
-//var localhost = "young-mesa-5396.herokuapp.com"
+var localhost = "young-mesa-5396.herokuapp.com"
 
 // App Configuration
 
