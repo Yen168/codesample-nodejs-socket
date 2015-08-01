@@ -16,6 +16,8 @@ $(function() {
 	var form = $('form.login');
 	
 	var secretTextBox = form.find('input[type=text]');
+	secretTextBox.hide();
+	
 	var presentation = $('.reveal');
 
 	var key = "", animationTimeout;
