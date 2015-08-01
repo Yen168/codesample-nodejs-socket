@@ -35,8 +35,13 @@ var io = require('socket.io').listen(app.listen(port));
 
 // local host ip address w default port 8080 unless port changed by host server
 
+// for local test
+
 //var localhost = ip_addr[0]+ ":" + port;
 //var localhost = os.hostname();
+
+// for heroku
+
 var localhost = "young-mesa-5396.herokuapp.com"
 
 // App Configuration
@@ -87,7 +92,13 @@ var presentation = io.on('connection', function (socket) {
 			if (data.login_status == "mobile"){
 
 				// unlock all clients
-				io.sockets.emit('bypassform', {
+
+				//io.sockets.emit('bypassform', {
+					//for all connections
+
+				// for all but not self
+				socket.broadcast.emit('bypassform', {
+				
 					bypass_pw: secret
 				});
 
